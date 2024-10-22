@@ -7,3 +7,4 @@ Pillow
 apscheduler
 pybase64
 websockets
+Jinja2
