@@ -1,7 +1,6 @@
 import logging
 
-# 配置日志格式，添加日志级别和模块名称
-logging.basicConfig(level=logging.INFO, format='%(asctime)s | %(levelname)s | %(name)s | %(message)s')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s | %(levelname)s | %(message)s')
 
 
 class Logger:

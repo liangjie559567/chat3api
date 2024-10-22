@@ -52,13 +52,6 @@
 > TODO
 > - [ ] 暂无，欢迎提 issue
 
-### 更新内容
-
-1. **增强异常处理和日志记录**： 在 `utils/Client.py` 和 `api/files.py` 中增加了详细的日志和异常处理。
-2. **改进错误处理逻辑**： 在 `chatgpt/authorization.py` 和 `chatgpt/chatFormat.py` 添加了日志记录以便调试。
-3. **优化异步调用**： 使用 `asyncio.gather` 进行并发处理，提高性能。
-4. **代码重构**： 减少重复代码，提高代码复用性。
-
 ## Tokens 管理
 
 1. 配置环境变量 `AUTHORIZATION` 作为 `授权码` ，然后运行程序。
@@ -92,7 +85,6 @@
 |      | UPLOAD_BY_URL     | `false`                                                     | `false`               | 开启后按照 `URL+空格+正文` 进行对话，自动解析 URL 内容并上传，多个 URL 用空格分隔           |
 |      | CHECK_MODEL       | `false`                                                     | `false`               | 检查账号是否支持传入模型，开启后可以稍微避免4o返回3.5内容，但是会增加请求时延，且并不能解决降智问题         |
 |      | SCHEDULED_REFRESH | `false`                                                     | `false`               | 是否定时刷新 AccessToken ，开启后每次启动程序将会全部非强制刷新一次，每4天晚上3点全部强制刷新一次。    |
-
 ## 部署
 
 ### Zeabur 部署
@@ -226,3 +218,4 @@ curl --location 'http://127.0.0.1:5005/v1/chat/completions' \
 ## License
 
 MIT License
+
