@@ -6,3 +6,4 @@ tiktoken
 Pillow
 apscheduler
 pybase64
+websockets
