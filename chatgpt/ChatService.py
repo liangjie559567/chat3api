@@ -16,3 +16,9 @@ from chatgpt.proofofWork import get_config, get_dpl, get_answer_token, get_requi
 from utils.Client import Client
 from utils.Logger import logger
 from utils.config import proxy_url_list, chatgpt_base_url_list
+
+class ChatService:
+    def __init__(self):
+        pass
+
+    # Define other methods as needed
