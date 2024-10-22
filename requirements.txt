@@ -7,4 +7,5 @@ Pillow
 apscheduler
 pybase64
 websockets
-Jinja2
+jinja2==3.0.3
+python-multipart
