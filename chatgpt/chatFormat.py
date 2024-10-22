@@ -28,11 +28,11 @@ def split_long_messages(api_messages, max_length):
     for message in api_messages:
         role = message.get('role')
         content = message.get('content')
-        if isinstance(content, str) and len(content) > max_length:
-            # 将消息分割成多个较小的部分
-            content_parts = [content[i:i + max_length] for i in range(0, len(content), max_length)]
-            for part in content_parts:
-                split_messages.append({'role': role, 'content': part})
+        if isinstance(content, str):
+            while len(content) > max_length:
+                split_messages.append({'role': role, 'content': content[:max_length]})
+                content = content[max_length:]
+            split_messages.append({'role': role, 'content': content})
         else:
             split_messages.append(message)
     return split_messages
@@ -383,7 +383,7 @@ def format_messages_with_url(content):
 async def api_messages_to_chat(service, api_messages, upload_by_url=False):
     file_tokens = 0
     chat_messages = []
-    max_length = 10000  # 设置每个消息片段的最大长度
+    max_length = 32000  # 设置每个消息片段的最大长度
     api_messages = split_long_messages(api_messages, max_length) # 分割长消息
 
     for api_message in api_messages:
