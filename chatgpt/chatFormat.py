@@ -383,7 +383,7 @@ def format_messages_with_url(content):
 async def api_messages_to_chat(service, api_messages, upload_by_url=False):
     file_tokens = 0
     chat_messages = []
-    max_length = 32000  # 设置每个消息片段的最大长度
+    max_length = 10000  # 设置每个消息片段的最大长度
     api_messages = split_long_messages(api_messages, max_length) # 分割长消息
 
     for api_message in api_messages:
