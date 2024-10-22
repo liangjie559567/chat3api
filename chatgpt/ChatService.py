@@ -18,7 +18,7 @@ from utils.Logger import logger
 from utils.config import proxy_url_list, chatgpt_base_url_list
 
 class ChatService:
-    def __init__(self):
-        pass
+    def __init__(self, req_token):
+        self.req_token = req_token
 
     # Define other methods as needed
